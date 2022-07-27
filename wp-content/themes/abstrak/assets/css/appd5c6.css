@@ -663,12 +663,15 @@ h1,
 
   @media only screen and (max-width: 767px) {
     span {
-      font-size: 48px;
+      font-size: 20px;
       position: relative;
+
       text-align:center;
-      left:5%;
+      
     }
   }
+
+  
   
   /* ends here */
   
@@ -2769,6 +2772,7 @@ Pagination
   margin-bottom: 40px;
   width: 90%;
   position: relative;
+  left:20px;
 }
 
 @media only screen and (min-width:1200px) and (max-width:1756px){
@@ -2777,7 +2781,7 @@ Pagination
   margin-bottom: 40px;
   width: 32%;
   position: relative;
-  bottom:500px;
+  bottom:480px;
   left: 710px;
 }}
 
@@ -2895,10 +2899,10 @@ Pagination
   }
 }
 .banner .banner-social .social-icon li a:hover {
-  color: var(--color-primary);
+  color: #1dc0e4;
 }
 .banner .banner-social .social-icon li a:hover i {
-  color: var(--color-primary);
+  color: #1dc0e4;
 }
 .banner.banner-style-1 .banner-content {
   margin-top: 60px;
@@ -2986,7 +2990,7 @@ Pagination
   .banner.banner-style-1 .banner-content .title {
     font-size: 60px;
     position: relative;
-    left:12px;
+    left:7.5px;
     
   }
 }
@@ -6465,7 +6469,7 @@ body.op-modal-open {
   color: var(--color-dark);
 }
 .axil-mainmenu.axil-sticky .header-action .social-icon-list li a:hover {
-  color: var(--color-primary);
+  color: #1dc0e4;
 }
 
 .mainmenu {
@@ -6762,7 +6766,7 @@ body.op-modal-open {
   }
 }
 .header-action .social-icon-list li a:hover {
-  color: var(--color-primary);
+  color: #1dc0e4;
 }
 .header-action .header-btn {
   margin-right: 0;
