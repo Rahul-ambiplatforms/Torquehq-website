@@ -155,10 +155,33 @@ STYLESHEET INDEXING
   animation: float 4s ease-in-out infinite;
   max-height: 600px;
   max-width:10%;
+  padding-top: 100px;
 
 
   
 }
+/* torque latest changes */
+@media only screen and (min-width:1199px) and (max-width:1599px){
+  .juice{
+    animation: float 4s ease-in-out infinite;
+    max-height: 600px;
+    max-width:10%;
+    margin-top: 0px;
+    padding-right:60px;
+  
+  }
+}
+
+@media only screen and (min-width:1599px) and (max-width:2599px){
+  .juice{
+    animation: float 4s ease-in-out infinite;
+    max-height: 600px;
+    max-width:10%;
+    margin-top: 100px;
+  
+  }
+}
+
 
 @keyframes float {
   0% {
@@ -995,6 +1018,9 @@ input:-webkit-autofill:active {
 /*-------------------------
     Back To Top  
 --------------------------*/
+
+/* color changed of back-to-top button , torquee */
+
 .back-to-top {
   position: fixed;
   bottom: -40px;
@@ -1039,6 +1065,7 @@ input:-webkit-autofill:active {
     right: 10px;
   }
 }
+/* color chnaged of button on hover torquee */
 .back-to-top.show:hover {
   color: rgb(114, 114, 114);
   bottom: 30px;
@@ -2765,6 +2792,7 @@ Pagination
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
   .banner .banner-content .title {
     font-size: 70px;
+    
   }
 }
 @media only screen and (max-width: 1199px) {
@@ -2798,14 +2826,25 @@ Pagination
   left:20px;
 }
 
-@media only screen and (min-width:1200px) and (max-width:1756px){
+
+@media only screen and (min-width:1600px) and (max-width:2550px){
+  .banner .banner-content .subtitle {
+    font-size: 20px;
+    margin-bottom: 40px;
+    width: 32%;
+    position: relative;
+    bottom:520px;
+    left: 710px;
+  }}
+
+@media only screen and (min-width:1200px) and (max-width:1600px){
 .banner .banner-content .subtitle {
   font-size: var(--font-body-1);
   margin-bottom: 40px;
   width: 32%;
   position: relative;
-  bottom:480px;
-  left: 710px;
+  bottom:460px;
+  left: 670px;
 }}
 
 @media only screen and (min-width:765px) and (max-width:1200px){
@@ -2950,8 +2989,9 @@ Pagination
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
   .banner.banner-style-1 .banner-content .title {
     font-size: 13.020833333333334vw;
-    letter-spacing: 28px; z-index: -1; color: #0e233c; font-weight: 600; left: 4%; bottom:450px;
+    letter-spacing: 28px; z-index: -1; color: #0e233c; font-weight: 600;  bottom:430px;
     position: relative;
+    
     text-align:center;  
   }
 }
@@ -2963,12 +3003,12 @@ Pagination
   }
 }
 
-/* size increased  */
+/* size increased torque latest */
 
 @media only screen and (min-width: 1599px) and (max-width: 2599px) {
   .banner.banner-style-1 .banner-content .title {
     font-size: 13.020833333333334vw;
-    letter-spacing: 28px; z-index: -1; color: #0e233c; font-weight: 600; left: 4%; bottom:500px;
+    letter-spacing: 28px; z-index: -1; color: #0e233c; font-weight: 600; left: 4%; bottom:480px;
     position: relative;
     text-align:center;  
   }
