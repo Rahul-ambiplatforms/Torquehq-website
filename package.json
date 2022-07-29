@@ -2,21 +2,29 @@
   "name": "torque-express",
   "version": "1.0.0",
   "description": "Torque.hq ",
-  "main": "index.js",
+  "main": "app.js",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
+    "start": "node app.js",
+    "check": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "16.15.1"
+  },
   "bugs": {
     "url": "https://github.com/Ambiplatforms-TORQUE/arcis/issues"
   },
   "homepage": "https://github.com/Ambiplatforms-TORQUE/arcis#readme",
   "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
     "ejs": "^3.1.8",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
   }
 }
