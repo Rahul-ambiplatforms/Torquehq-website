@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-
+const port = process.env.PORT || 5000;
 
 app.set('view engine','ejs');
 app.use(express.static(__dirname + '/public'));
@@ -14,6 +14,10 @@ app.get('/roadmap',function(req,res){
     res.render('pages/roadmap');
 });
 
-Port=8181;
-app.listen(Port);
-console.log(`Server Is Running on ${Port}`);
+//Listening to port
+app.listen(port, () => {
+    console.log(`The server is running on port ${port}`)
+    
+   
+   
+});
