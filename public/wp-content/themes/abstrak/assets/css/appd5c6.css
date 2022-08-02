@@ -10335,7 +10335,7 @@ body.admin-bar .elementor-edit-link-title {
     top: 0;
     bottom: 0;
     left: -300px;
-    background-color: var(--color-white);
+    background-color: rgb(39, 39, 46);;
     width: 300px;
     padding: 20px 10px;
     transition: all 0.8s cubic-bezier(0.77, 0.2, 0.05, 1);
