@@ -63,7 +63,6 @@ STYLESHEET INDEXING
 -------------------------*/
 
 
-
 .blockchainn:hover{
   transform: scale(1.19);
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
@@ -9628,11 +9627,16 @@ input, .form-control {
 }
 .widget.widget_pages ul li a, .widget.widget_meta ul li a, .widget.widget_recent_comments ul li a, .widget.widget_recent_entries ul li a, .widget.widget_nav_menu ul li a {
   font-size: var(--font-body-1);
-  color: var(--color-body);
+  color: #c5c5c5;
   padding: 18px 0;
   position: relative;
   display: block;
 }
+
+/* .widget.widget_pages ul li a, .widget.widget_meta ul li a, .widget.widget_recent_comments ul li a, .widget.widget_recent_entries ul li a, .widget.widget_nav_menu ul li a:hover {
+  color:red;
+} */
+
 .widget.widget_pages ul li a:hover, .widget.widget_meta ul li a:hover, .widget.widget_recent_comments ul li a:hover, .widget.widget_recent_entries ul li a:hover, .widget.widget_nav_menu ul li a:hover {
   color: var(--color-primary);
 }
@@ -12657,5 +12661,4 @@ pre {
 }
 
 /*# sourceMappingURL=app.css.map */
-
 
