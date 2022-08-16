@@ -63,6 +63,10 @@ STYLESHEET INDEXING
 -------------------------*/
 
 
+
+
+
+
 .blockchainn:hover{
   transform: scale(1.19);
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); */
@@ -155,10 +159,14 @@ STYLESHEET INDEXING
   max-height: 600px;
   max-width:10%;
   padding-top: 100px;
+  transform: translateZ(500px);
 
 
   
 }
+
+
+
 /* torque latest changes */
 @media only screen and (min-width:1199px) and (max-width:1599px){
   .juice{
@@ -249,14 +257,28 @@ STYLESHEET INDEXING
 
 @media only screen and (min-width:200px) and (max-width:900px) {
   .leaves{
-    display: none;
+
   }
+
+  .leaves .layer:nth-child(4) {
+    max-width:7%;
+   
+   top: 120% !important;
+   left: 30% !important;
+ }
+ 
 }
 
 @media only screen and (min-width:900px) and (max-width:1199px) {
   .leaves{
-    display: none;
+    
   }
+  .leaves .layer:nth-child(4) {
+    max-width:7%;
+   
+   top: 120% !important;
+   left: 30% !important;
+ }
 }
 
 
