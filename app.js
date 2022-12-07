@@ -3,6 +3,15 @@ var app = express();
 
 const port = process.env.PORT || 5000;
 var nodemailer = require('nodemailer');
+var bodyParser = require('body-parser')
+
+
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 app.set('view engine','ejs');
 app.use(express.static(__dirname + '/public'));
@@ -20,17 +29,12 @@ app.get('/contact',function(req,res){
     res.render('pages/contact');
 });
 
+app.get('/thankyou',function(req,res){
+  res.render('pages/thankyou');
+});
 
-
-
-app.post("/contact", (req,res)=>{
-    var mailContent = {
-        name: req.body.name,
-        email: req.body.email,
-        company: req.body.company,
-        message: req.body.message
-    }
-  
+app.post("/contact", function(req,res,){
+ 
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         host: 'smtp.gmail.com',
@@ -38,15 +42,16 @@ app.post("/contact", (req,res)=>{
         secure: true,
         auth: {
           user: 'contact@ambiplatforms.com',
-          pass: 'hzuebrukbdkjpsmq',
+          pass: 'kovaufvhgzkiohdr',
         }
     });
   
     var mailOptions = {
-        from: mailContent.email,
+        from: req.body.email+"Sent Mail on TorqueHQ",
         to: 'contact@ambiplatforms.com',
-        company: mailContent.company,
-        text: mailContent.name + " sent you a message : \n" +"\n Message: "+ JSON.stringify(mailContent.message) + "\n Email id: " + mailContent.email + "\n Company: " + mailContent.company
+        subject: 'To Torque!',
+        company: req.body.company,
+        text: req.body.name + " sent you a message : \n" +"\n Message: "+ JSON.stringify(req.body.message) + "\n Email id: " + req.body.email + "\n Company: " + req.body.company
       };
   
       transporter.sendMail(mailOptions, function(error, info){
@@ -54,7 +59,7 @@ app.post("/contact", (req,res)=>{
           console.log(error);
         } else {
           console.log('Email sent: ' + info.response);
-          res.redirect("/contact");
+          res.redirect("/thankyou");
         }
       });  
   

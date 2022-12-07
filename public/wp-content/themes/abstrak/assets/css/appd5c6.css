@@ -5523,7 +5523,7 @@ Pagination
 }
 @media only screen and (max-width: 767px) {
   .splash-main-banner .banner-content .title {
-    font-size: 40px;
+    font-size: 40px;  
   }
 }
 .splash-main-banner .site-element-count {
@@ -6541,7 +6541,7 @@ body.op-modal-open {
   background-color: white;
 }
 .axil-mainmenu.axil-sticky .header-action .sidemenu-btn .btn-wrap span {
-  background-color: var(--color-white);
+  background-color: var(--color-dark);
 }
 .axil-mainmenu.axil-sticky .header-action .social-icon-list li a {
   color: var(--color-dark);
