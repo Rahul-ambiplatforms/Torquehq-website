@@ -17,8 +17,33 @@
         href="comments/feed/index.html" />
 
      <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=AW-871224810"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-871224810'); </script>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+   <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+   async defer>
+</script>
 
-    <script>
+   
+<script>
+    $(document).ready(function() {
+      $('#contact_form').submit(function() {
+        $(this).ajaxSubmit({
+          error: function(xhr) {
+            status('Error: ' + xhr.status);
+          },
+         success: function(response) {
+          console.log(response);
+         }
+        });
+        //Very important line, it disable the page refresh.
+        return false;
+      });
+    });
+</script>
+
+   
+   
+   <script>
         window._wpemojiSettings = {
             "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/",
             "ext": ".png",
@@ -3621,7 +3646,7 @@
 <div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
 
 
-<form action="/contact" method="POST" class="wpcf7-form init" novalidate="novalidate" >
+<form id="contact_form" action="/contact" method="POST" class="wpcf7-form init" novalidate="novalidate" >
 <div style="display: none;">
 <input type="hidden" name="_wpcf7" value="55" />
 <input type="hidden" name="_wpcf7_version" value="5.6" />
@@ -3646,6 +3671,10 @@
 <label for="form-help">How can we help you?</label><br />
 <span class="wpcf7-form-control-wrap"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required form-control" id="message" aria-required="true" aria-invalid="false" placeholder="Your Message"></textarea></span>
 </div>
+
+<div class="g-recaptcha" data-sitekey="6LfaimMjAAAAAAQGSVe_twKMa_l23_CoLPvaPvF2"></div>
+
+
 <div class="form-group">
 <input type="submit" value="Submit" class="wpcf7-form-control has-spinner wpcf7-submit axil-btn btn-fill-primary btn-fluid btn-primary" />
 </div>
@@ -3673,7 +3702,7 @@
                     
                                             <p class="subtitle">Our customer care is open from Mon-Fri, 10:00 am to 6:00 pm</p>
                                       
-                                            <h4 class="phone-number"><a href="mailto:contact@ambiplatforms.com">contact@ambiplatforms.com</a></h4>
+                                            <h4 class="phone-number"><a href="mailto:contact@torquehq.io">contact@torquehq.io</a></h4>
                       
                 </div>
             </div>

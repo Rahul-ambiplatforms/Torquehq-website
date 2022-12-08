@@ -33,22 +33,44 @@ app.get('/thankyou',function(req,res){
   res.render('pages/thankyou');
 });
 
+
+
 app.post("/contact", function(req,res,){
  
+// g-recaptcha-response is the key that browser will generate upon form submit.
+  // if its blank or null means user has not selected the captcha, so return the error.
+  if(req.body['g-recaptcha-response'] === undefined || req.body['g-recaptcha-response'] === '' || req.body['g-recaptcha-response'] === null) {
+    return res.json({"responseCode" : 1,"responseDesc" : "Please select captcha"});
+  }
+  // Put your secret key here.
+  var secretKey = "6LfaimMjAAAAAHfG-cViK8BnwzPShm-RxJPd4cHx";
+  // req.connection.remoteAddress will provide IP address of connected user.
+  var verificationUrl = "https://www.google.com/recaptcha/api/siteverify?secret=" + secretKey + "&response=" + req.body['g-recaptcha-response'] + "&remoteip=" + req.connection.remoteAddress;
+  // Hitting GET request to the URL, Google will respond with success or error scenario.
+ 
+  request(verificationUrl,function(error,response,body) {
+    body = JSON.parse(body);
+    // Success will be true or false depending upon captcha validation.
+    if(body.success !== undefined && !body.success) {
+      return res.json({"responseCode" : 1,"responseDesc" : "Failed captcha verification"});
+    }
+    res.json({"responseCode" : 0,"responseDesc" : "Sucess"});
+  });
+
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         host: 'smtp.gmail.com',
         port: 465,
         secure: true,
         auth: {
-          user: 'contact@ambiplatforms.com',
-          pass: 'kovaufvhgzkiohdr',
+          user: 'rahul@ambiplatforms.com',
+          pass: 'erhpenuuqmzdxqow',
         }
     });
   
     var mailOptions = {
         from: req.body.email+"Sent Mail on TorqueHQ",
-        to: 'contact@ambiplatforms.com',
+        to: 'rahul@ambiplatforms.com',
         subject: 'To Torque!',
         company: req.body.company,
         text: req.body.name + " sent you a message : \n" +"\n Message: "+ JSON.stringify(req.body.message) + "\n Email id: " + req.body.email + "\n Company: " + req.body.company
